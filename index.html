@@ -43,11 +43,11 @@ layout: default
 <div class="section" id="golden-rule">
   <div class="col">
     <h2>黄金法则</h2>
-    <p>在任何时候同意并且执行这里的，或者你自己的代码指引。不轮大小，指出其中不正确地部分。了解此代码指引的更多内容或者贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
+    <p>在任何时候同意并且执行这里的，或者你自己的代码指引。指出其中任何不正确地部分。了解此代码指引的更多内容或者贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
   </div>
   <div class="col">
     <blockquote>
-      <p>不管多少人同时参与编码，每一行代码都应该看上去像是一个人写的一样。</p>
+      <p>不管多少人同时参与编码，所有代码都应该看上去像是一个人编写的一样。</p>
     </blockquote>
   </div>
 </div>
@@ -119,7 +119,7 @@ layout: default
 <div class="section" id="html-attribute-order">
   <div class="col">
     <h3>属性顺序</h3>
-    <p>HTML 属性应该按照特定的属性来保证易读性。</p>
+    <p>HTML 属性应该按照特定的顺序出现以保证易读性。</p>
     <ul>
       <li><code>class</code></li>
       <li><code>id</code>, <code>name</code></li>
@@ -128,7 +128,7 @@ layout: default
       <li><code>title</code>, <code>alt</code></li>
       <li><code>aria-*</code>, <code>role</code></li>
     </ul>
-    <p>Classes 是为高可复用组件设计的，所以他们处在第一位。Ids 更加具体而且应该尽量少使用(例如, 页内书签)，所以他们处在第二位。</p>
+    <p>Classes 是为高可复用组件设计的，所以他们处在第一位。Ids 更加具体而且应该尽量少使用（例如, 页内书签），所以他们处在第二位。</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
@@ -157,7 +157,7 @@ layout: default
 <div class="section" id="html-reducing-markup">
   <div class="col">
     <h3>减少标签数量</h3>
-    <p>在编写 HTML 代码时，需要尽量避免多余的父节。很多时候，需要通过迭代和重构来使 HTML 变得更少。 参考下面的示例:</p>
+    <p>在编写 HTML 代码时，需要尽量避免多余的父节点。很多时候，需要通过迭代和重构来使 HTML 变得更少。 参考下面的示例:</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
@@ -184,17 +184,17 @@ layout: default
       <li>使用组合选择器时，保持每个独立的选择器占用一行。</li>
       <li>为了代码的易读性，在每个声明的左括号前增加一个空格。</li>
       <li>声明块的右括号应该另起一行。</li>
-      <li>每条声明的 <code>:</code> 后面应该插入一个空格。</li>
+      <li>每条声明 <code>:</code> 后应该插入一个空格。</li>
       <li>每条声明应该只占用一行来保证错误报告更加准确。</li>
-      <li>所有声明应该以分号结尾。虽然最后一条声明后的分号是可选的，但是没有他你的代码会更容易出错。</li>
+      <li>所有声明应该以分号结尾。虽然最后一条声明后的分号是可选的，但是如果没有他，你的代码会更容易出错。</li>
       <li>逗号分隔的取值，都应该在逗号之后增加一个空格。</li>
       <li>不要在颜色值 <code>rgb()</code> 和 <code>rgba()</code> <em>中</em>增加空格，并且不要带有取值前面不必要的 0 (比如，使用 .5 替代 0.5)。</li>
-      <li>所有的十六进制值都应该使用小写字母，例如 <code>#fff</code>。因为小写字母有更多不同的造型，在浏览文档时，他们能够更轻松的被区分开来。</li>
+      <li>所有的十六进制值都应该使用小写字母，例如 <code>#fff</code>。因为小写字母有更多样的外形，在浏览文档时，他们能够更轻松的被区分开来。</li>
       <li>尽可能使用短的十六进制数值，例如使用 <code>#fff</code> 替代 <code>#ffffff</code>。</li>
       <li>为选择器中得属性取值添加引号，例如 <code>input[type="text"]</code>。 <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">他们只在某些情况下可有可无</a>，所以都使用引号可以增加一致性。</li>
       <li>不要为 0 指明单位，比如使用 <code>margin: 0;</code> 而不是 <code>margin: 0px;</code>。</li>
     </ul>
-    <p>对这里提到的规则有问题吗？参考 Wikipedia 中的<a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax"> CSS 的语法部分</a>。</p>
+    <p>对这里提到的规则有问题吗？参考 Wikipedia 中的<a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax"> CSS 语法部分</a>。</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
@@ -223,7 +223,7 @@ layout: default
 <div class="section" id="css-media-queries">
   <div class="col">
     <h3>媒体查询位置</h3>
-    <p>尽量将媒体查询的位置靠近他们相关的规则。不要将他们装在一起放到一个独立的样式文件，或者丢在文档的最底部。这样做只会让大家以后更加容易忘记他们。这里是一个典型的案例。</p>
+    <p>尽量将媒体查询的位置靠近他们相关的规则。不要将他们一起放到一个独立的样式文件中，或者丢在文档的最底部。这样做只会让大家以后更容易忘记他们。这里是一个典型的案例。</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
@@ -233,7 +233,7 @@ layout: default
 <div class="section" id="css-prefixed-properties">
   <div class="col">
     <h3>前缀属性</h3>
-    <p>当使用厂商前缀属性时，通过缩进使取值垂直对齐以便方便的多行编辑。</p>
+    <p>当使用厂商前缀属性时，通过缩进使取值垂直对齐以便多行编辑。</p>
     <p>在 Textmate 中，使用 <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A)。 在 Sublime Text 2 中， 使用 <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) 和 <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;)。</p>
   </div>
   <div class="col">
@@ -244,8 +244,8 @@ layout: default
 <div class="section" id="css-single-declarations">
   <div class="col">
     <h3>单条声明的声明块</h3>
-    <p>在一个声明块中<strong>只包含一条声明</strong>的情况下，可以为了易读性和快速编辑可以考虑移除其中的换行。所有包含多条声明的声明块应该分为多行。</p>
-    <p>这样做的关键因素是错误检测——例如，一个 CSS 验证程序显示你在 183 行有一个语法错误。如果是一个单条声明的行，那就是他了。在多个声明的情况下，你必须为到底哪里出错了费下脑子。</p>
+    <p>在一个声明块中<strong>只包含一条声明</strong>的情况下，为了易读性和快速编辑可以考虑移除其中的换行。所有包含多条声明的声明块应该分为多行。</p>
+    <p>这样做的关键因素是错误检测 - 例如，一个 CSS 验证程序显示你在 183 行有一个语法错误,如果是一个单条声明的行，那就是他了。在多个声明的情况下，你必须为哪里出错了费下脑子。</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
@@ -255,7 +255,7 @@ layout: default
 <div class="section" id="css-shorthand">
   <div class="col">
     <h3>属性简写</h3>
-    <p>坚持限制属性取值简写的使用，他需要你必须显示设置所有取值。常见的属性简写滥用包括:</p>
+    <p>坚持限制属性取值简写的使用，属性简写需要你必须显式设置所有取值。常见的属性简写滥用包括:</p>
     <ul>
       <li><code>padding</code></li>
       <li><code>margin</code></li>
@@ -264,7 +264,7 @@ layout: default
       <li><code>border</code></li>
       <li><code>border-radius</code></li>
     </ul>
-    <p>大多数情况下，我们并不需要设置属性简写中包含的所有值。例如，HTML 头部只设置上下的，所以如果需要，只设置这两个值。过度使用属性简写往往会导致更混乱的代码，其中包含不必要的重写和意想不到的副作用。</p>
+    <p>大多数情况下，我们并不需要设置属性简写中包含的所有值。例如，HTML 头部只设置上下的 margin，所以如果需要，只设置这两个值。过度使用属性简写往往会导致更混乱的代码，其中包含不必要的重写和意想不到的副作用。</p>
     <p>Mozilla Developer Network 有一篇对不熟悉属性简写及其行为的人来说很棒的关于 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> 的文章。</p>
   </div>
   <div class="col">
@@ -275,7 +275,7 @@ layout: default
 <div class="section" id="css-nesting">
   <div class="col">
     <h3>LESS 和 SASS 中的嵌套</h3>
-    <p>避免不必要的嵌套。你可以进行嵌套，不意味着你应该这样做。只有在你需要给父元素增加样式并且同时存在多个子元素时才需要考虑嵌套。</p>
+    <p>避免不必要的嵌套。可以进行嵌套，不意味着你应该这样做。只有在需要给父元素增加样式并且同时存在多个子元素时才需要考虑嵌套。</p>
   </div>
   <div class="col">
     {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
@@ -285,7 +285,7 @@ layout: default
 <div class="section" id="css-comments">
   <div class="col">
     <h3>代码注释</h3>
-    <p>代码是有人来编写和维护的。保证你的代码是描述性的，包含好的注释，并且容易被他人理解。好的代码注释传达上下文和目标。不要简单地重申组件或者 class 名称。</p>
+    <p>代码是由人来编写和维护的。保证你的代码是描述性的，包含好的注释，并且容易被他人理解。好的代码注释传达上下文和目标。不要简单地重申组件或者 class 名称。</p>
     <p>Be sure to write in complete sentences or larger comments and succinct phrases for general notes.</p>
   </div>
   <div class="col">
@@ -335,9 +335,9 @@ layout: default
     <h3>代码组织</h3>
     <ul>
       <li>以组件为单位组织代码。</li>
-      <li>制定一个一直的注释层级结构。</li>
-      <li>使用一致的空白来分割代码块，让查看大的文档时更有优势。</li>
-      <li>当使用多个 CSS 文件时，通过组件而不是页面来分离他们。页面会被重新排列，而组件移动就可以了。</li>
+      <li>制定一个一致的注释层级结构。</li>
+      <li>使用一致的空白来分割代码块，这样做在查看大的文档时更有优势。</li>
+      <li>当使用多个 CSS 文件时，通过组件而不是页面来区分他们。页面会被重新排列，而组件移动就可以了。</li>
     </ul>
   </div>
   <div class="col">
@@ -352,9 +352,9 @@ layout: default
     <ul>
       <li>使用两个空格的 soft-tabs。</li>
       <li>在保存时删除尾部的空白字符。</li>
-      <li>设置文件编码为 UTF-8.</li>
+      <li>设置文件编码为 UTF-8。</li>
       <li>在文件结尾添加一个空白行。</li>
     </ul>
-    <p>参照文档，将这些设置应用中你的项目中的 <code>.editorconfig</code> 文件。 例如，<a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">Bootstrap 中的 <code>.editorconfig</code> 文件</a>。 通过 <a href="http://editorconfig.org">关于 EditorConfig</a> 了解更多。</p>
+    <p>参照文档，将这些设置应用到项目的 <code>.editorconfig</code> 文件。 例如，<a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">Bootstrap 中的 <code>.editorconfig</code> 文件</a>。 通过 <a href="http://editorconfig.org">关于 EditorConfig</a> 了解更多内容。</p>
   </div>
 </div>
