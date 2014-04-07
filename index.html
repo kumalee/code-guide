@@ -29,6 +29,7 @@ layout: default
       <li><a href="#css-syntax">CSS 语法</a></li>
       <li><a href="#css-declaration-order">声明顺序</a></li>
       <li><a href="#css-media-queries">媒体查询位置</a></li>
+      <li><a href="#css-import">不要使用 @import</a></li>
       <li><a href="#css-prefixed-properties">前缀属性</a></li>
       <li><a href="#css-single-declarations">单条声明的声明块</a></li>
       <li><a href="#css-shorthand">属性简写</a></li>
@@ -122,7 +123,7 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="html-style-script">
+<div class="section" id="html-style -script">
   <div class="col">
     <h3>引入 CSS 和 JavaScript</h3>
     <p>根据 HTML5 规范, 通常在引入 CSS 和 JavaScript 时不需要指明 <code>type</code>，因为 <code>text/css</code> 和 <code>text/javascript</code> 分别是他们的默认值。</p>
@@ -256,6 +257,22 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="css-import">
+  <div class="col">
+    <h3>不要使用 <code>@import</code></h3>
+    <p>与 <code>&lt;link&gt;</code> 相比, <code>@import</code> 更慢，需要额外的页面请求，并且可能引发其他的意想不到的问题。应该避免使用他们，选择其他的方案：</p>
+    <ul>
+      <li>使用多个 <code>&lt;link&gt;</code> 元素</li>
+      <li>使用 CSS 预处理器例如 Sass 或 Less 将样式编译到一个文件中</li>
+      <li>使用 Rails, Jekyll, 或者其他环境提供的功能，来合并你的 CDD 文件。</li>
+    </ul>
+    <p>了解更多信息, 参照 Steve Souders 的<a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">这篇文章</a>。</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
   </div>
 </div>
 
