@@ -12,13 +12,15 @@ layout: default
     <ul>
       <li><a href="#html-syntax">语法</a></li>
       <li><a href="#html-doctype">HTML5 doctype</a></li>
+      <li><a href="#html-lang">Language attribute</a></li>
       <li><a href="#html-encoding">字符编码</a></li>
+      <li><a href="#html-ie-compatibility-mode">Internet Explorer 兼容模式</a></li>
       <li><a href="#html-style-script">引入 CSS 和 JavaScript</a></li>
       <li><a href="#html-practicality">实用高于完美</a></li>
       <li><a href="#html-attribute-order">属性顺序</a></li>
       <li><a href="#html-boolean-attributes">Boolean 属性</a></li>
       <li><a href="#html-reducing-markup">减少标签数量</a></li>
-      <li><a href="#html-javascript">JavaScript 生成标签</a></li>
+      <li><a href="#html-javascript">JavaScript 生成的标签</a></li>
     </ul>
   </div>
   <div class="col">
@@ -43,7 +45,7 @@ layout: default
 <div class="section" id="golden-rule">
   <div class="col">
     <h2>黄金法则</h2>
-    <p>在任何时候同意并且执行这里，或者你自己的代码指引。指出其中任何不正确地部分。继续了解此代码指引或者贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
+    <p>永远遵循同一套编码规范 -- 可以是这里列出的，也可以是你自己总结的。在任何时候遵循规范，可以是这里的规范或者你自己的编码规范。随时指出其中任何不正确地部分。继续了解此代码指引或者贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
   </div>
   <div class="col">
     <blockquote>
@@ -84,6 +86,21 @@ layout: default
   </div>
 </div>
 
+<div class="section" id="html-lang">
+  <div class="col">
+    <h3>Language attribute</h3>
+    <p>From the HTML5 spec:</p>
+    <blockquote>
+      <p>Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.</p>
+    </blockquote>
+    <p>Read more about the <code>lang</code> attribute <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in the spec</a>.</p>
+    <p>Head to Sitepoint for a <a href="http://reference.sitepoint.com/html/lang-codes">list of language codes</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/lang.html %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="html-encoding">
   <div class="col">
     <h3>字符编码</h3>
@@ -91,6 +108,17 @@ layout: default
   </div>
   <div class="col">
     {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>IE compatibility mode</h3>
+    <p>Internet Explorer supports the use of a document compatibility <code>&lt;meta&gt;</code> tag to specify what version of IE the page should be rendered as. Unless circumstances require otherwise, it's most useful to instruct IE to use the latest supported mode with <strong>edge mode</strong>.</p>
+    <p>For more information, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">read this awesome Stack Overflow article</a>.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
   </div>
 </div>
 

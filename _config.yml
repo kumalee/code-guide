@@ -1,5 +1,5 @@
-name:          代码指引 by @mdo
-description:   开发灵活，稳定，可持续 HTML 和 CSS 的规范。
+name:          编码规范 by @mdo
+description:   开发灵活，稳定，可持续 HTML 和 CSS 代码的规范。
 
 markdown:      rdiscount
 permalink:     pretty
