@@ -12,7 +12,7 @@ layout: default
     <ul>
       <li><a href="#html-syntax">语法</a></li>
       <li><a href="#html-doctype">HTML5 doctype</a></li>
-      <li><a href="#html-lang">Language attribute</a></li>
+      <li><a href="#html-lang">Language 属性</a></li>
       <li><a href="#html-encoding">字符编码</a></li>
       <li><a href="#html-ie-compatibility-mode">Internet Explorer 兼容模式</a></li>
       <li><a href="#html-style-script">引入 CSS 和 JavaScript</a></li>
@@ -34,6 +34,7 @@ layout: default
       <li><a href="#css-single-declarations">单条声明的声明块</a></li>
       <li><a href="#css-shorthand">属性简写</a></li>
       <li><a href="#css-nesting">LESS 和 SASS 中的嵌套</a></li>
+      <li><a href="#css-operators">LESS 和 SASS 中的运算符</a></li>
       <li><a href="#css-comments">代码注释</a></li>
       <li><a href="#css-classes">Class 命名</a></li>
       <li><a href="#css-selectors">选择器</a></li>
@@ -46,11 +47,11 @@ layout: default
 <div class="section" id="golden-rule">
   <div class="col">
     <h2>黄金法则</h2>
-    <p>永远遵循同一套编码规范 -- 可以是这里列出的，也可以是你自己总结的。在任何时候遵循规范，可以是这里的规范或者你自己的编码规范。随时指出其中任何不正确地部分。继续了解此代码指引或者贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
+    <p>始终同意并遵循规范的每一条内容 -- 可以是这里列出的，也可以是你自己的。不对之处，请随时指出，继续了解或贡献内容，请 <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>。</p>
   </div>
   <div class="col">
     <blockquote>
-      <p>不管多少人同时参与编码，所有代码都应该看上去像是一个人编写的一样。</p>
+      <p>不管有多少参与者，代码都应该像同一个人所写。</p>
     </blockquote>
   </div>
 </div>
@@ -89,13 +90,13 @@ layout: default
 
 <div class="section" id="html-lang">
   <div class="col">
-    <h3>Language attribute</h3>
+    <h3>Language 属性</h3>
     <p>根据 HTML5 规范：</p>
     <blockquote>
-      <p>鼓励网站作者在 html 元素上指定 lang 属性，来指出页面的语言。这样做会有助于语言合成工具来确定怎样发音，以及翻译工具决定使用的规则，等等。</p>
+      <p>鼓励网站作者在 html 元素上指定 lang 属性，来指出页面的语言。这样做有助于语言合成工具来确定发音方式，以及帮助翻译工具决定使用的规则，等等。</p>
     </blockquote>
     <p>通过<a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">规范</a>中的 <code>lang</code> 属性了解更多相关内容。</p>
-    <p>Head to Sitepoint for a <a href="http://reference.sitepoint.com/html/lang-codes">list of language codes</a>.</p>
+    <p>前往 Sitepoint 查看 <a href="http://reference.sitepoint.com/html/lang-codes">language codes 列表</a>。</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/lang.html %}{% endhighlight %}
@@ -105,7 +106,7 @@ layout: default
 <div class="section" id="html-encoding">
   <div class="col">
     <h3>字符编码</h3>
-    <p>通过声明一个明确的字符编码，让浏览器轻松、快速的确定适合网页内容的渲染方式。</p>
+    <p>通过声明一个明确的字符编码，让浏览器轻松、快速的确定适合网页内容的渲染方式。这样做之后，需要避免在 HTML 中出现字符实体，直接提供字符与文档一致的编码（通常是 UTF-8）。</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
@@ -154,9 +155,9 @@ layout: default
       <li><code>class</code></li>
       <li><code>id</code>, <code>name</code></li>
       <li><code>data-*</code></li>
-      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code></li>
+      <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code>, <code>value</code></li>
       <li><code>title</code>, <code>alt</code></li>
-      <li><code>aria-*</code>, <code>role</code></li>
+      <li><code>role</code>, <code>aria-*</code></li>
     </ul>
     <p>Classes 是为高可复用组件设计的，所以他们处在第一位。Ids 更加具体而且应该尽量少使用（例如, 页内书签），所以他们处在第二位。</p>
   </div>
@@ -218,7 +219,8 @@ layout: default
       <li>每条声明应该只占用一行来保证错误报告更加准确。</li>
       <li>所有声明应该以分号结尾。虽然最后一条声明后的分号是可选的，但是如果没有他，你的代码会更容易出错。</li>
       <li>逗号分隔的取值，都应该在逗号之后增加一个空格。</li>
-      <li>不要在颜色值 <code>rgb()</code> 和 <code>rgba()</code> <em>中</em>增加空格，并且不要带有取值前面不必要的 0 (比如，使用 .5 替代 0.5)。</li>
+      <li>不要在颜色值 <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, 和 <code>rect()</code> <em>中</em>增加空格</li>
+      <li>不要在属性取值或者颜色参数前面添加不必要的 0 (比如，使用 <code>.5</code> 替代 <code>0.5</code> 和 <code>-.5px</code> 替代 <code>0.5px</code>)。</li>
       <li>所有的十六进制值都应该使用小写字母，例如 <code>#fff</code>。因为小写字母有更多样的外形，在浏览文档时，他们能够更轻松的被区分开来。</li>
       <li>尽可能使用短的十六进制数值，例如使用 <code>#fff</code> 替代 <code>#ffffff</code>。</li>
       <li>为选择器中得属性取值添加引号，例如 <code>input[type="text"]</code>。 <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">他们只在某些情况下可有可无</a>，所以都使用引号可以增加一致性。</li>
@@ -263,11 +265,11 @@ layout: default
 <div class="section" id="css-import">
   <div class="col">
     <h3>不要使用 <code>@import</code></h3>
-    <p>与 <code>&lt;link&gt;</code> 相比, <code>@import</code> 更慢，需要额外的页面请求，并且可能引发其他的意想不到的问题。应该避免使用他们，选择其他的方案：</p>
+    <p>与 <code>&lt;link&gt;</code> 相比, <code>@import</code> 更慢，需要额外的页面请求，并且可能引发其他的意想不到的问题。应该避免使用他们，而选择其他的方案：</p>
     <ul>
       <li>使用多个 <code>&lt;link&gt;</code> 元素</li>
       <li>使用 CSS 预处理器例如 Sass 或 Less 将样式编译到一个文件中</li>
-      <li>使用 Rails, Jekyll, 或者其他环境提供的功能，来合并你的 CSS 文件。</li>
+      <li>使用 Rails, Jekyll 或其他环境提供的功能，来合并 CSS 文件。</li>
     </ul>
     <p>了解更多信息, 参照 Steve Souders 的<a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">这篇文章</a>。</p>
   </div>
@@ -328,6 +330,16 @@ layout: default
   </div>
 </div>
 
+<div class="section" id="css-operators">
+  <div class="col">
+    <h3>LESS 和 SASS 中的运算符</h3>
+    <p>为了提高代码可读性，在数学运算外增加括号，并且在取值，变量和运算符之间增加空格。</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/operators.scss %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="css-comments">
   <div class="col">
     <h3>代码注释</h3>
@@ -348,8 +360,9 @@ layout: default
       <li>Class 的命名应该尽量短，也要尽量明确。</li>
       <li>使用有意义的名称；使用结构化或者作用目标相关，而不是抽象的名称。</li>
       <li>命名时使用最近的父节点或者父 class 作为前缀。</li>
-      <li>使用 <code>.js-*</code> classes 来表示行为(相对于样式)，但是不要在 CSS 中包含这些 classes。</li>
+      <li>使用 <code>.js-*</code> classes 来表示行为(相对于样式)，但是不要在 CSS 中定义这些 classes。</li>
     </ul>
+    <p>这些规则在创建 Sass 和 Less 变量名时同样有用。</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
