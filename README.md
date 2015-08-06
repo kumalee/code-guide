@@ -18,4 +18,3 @@ Heavily inspired by [Idiomatic CSS](https://github.com/necolas/idiomatic-css) an
 [Spanish](http://adrianayala.mx/code-guide/es/) - Translated by [Adrian Ayala](http://adrianayala.mx/)  
 [Indonesian](http://diagramatics.github.io/code-guide-id) - Translated by [Steven Sinatra](http://diagramatics.me)  
 
-<3
