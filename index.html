@@ -41,6 +41,14 @@ layout: default
       <li><a href="#css-organization">代码组织</a></li>
     </ul>
   </div>
+  <div class="col">
+    <h4><a href="#react">React</a></h4>
+    <ul>
+      <li><a href="#react-type">PropTypes 检查</a></li>
+      <li><a href="#react-declare">命名规范</a></li>
+      <li><a href="#react-tips">Tips</a></li>
+    </ul>
+  </div>
 </div>
 
 
@@ -401,6 +409,49 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="heading" id="react">
+  <h2>React</h2>
+</div>
+
+<div class="section" id="react-type">
+  <div class="col">
+    <h3>参数类型检查</h3>
+    <ul>
+      <li>所有带参数的组件必须有 propTypes 类型检查。</li>
+      <li>显示地设定参数类型，便于调用时了解参数</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight js %}{% include js/propTypes.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="react-declare">
+  <div class="col">
+    <h3>命名规范</h3>
+    <ul>
+      <li>所有变量名使用驼峰命名法</li>
+      <li>事件以 _ 开头</li>
+      <li>所有返回 view 的方法都以 render 开头，View 结尾</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight js %}{% include js/declare.js %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="react-tips">
+  <div class="col">
+    <h3>使用提示</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <div class="col">
+
   </div>
 </div>
 
